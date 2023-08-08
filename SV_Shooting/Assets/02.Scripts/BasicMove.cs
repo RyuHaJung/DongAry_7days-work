@@ -17,6 +17,6 @@ public class BasicMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(moveSpeed, 2);
+        rb.velocity = new Vector2(moveSpeed, 0);
     }
 }
