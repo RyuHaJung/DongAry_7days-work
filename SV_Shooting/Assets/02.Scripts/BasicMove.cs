@@ -5,18 +5,18 @@ using UnityEngine;
 public class BasicMove : MonoBehaviour
 {
     public float moveSpeed;
-
+    public float rotSpeed;
     private Rigidbody2D rb;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         rb.velocity = new Vector2(moveSpeed, 0);
+        transform.rotation = Quaternion.Euler(0f,0f,transform.rotation.eulerAngles.z + (Random.Range(rotSpeed / 2f,rotSpeed) * Time.deltaTime));
+        // transform.Rotate(0, 0, this.rotSpeed * Time.deltaTime);
     }
 }
